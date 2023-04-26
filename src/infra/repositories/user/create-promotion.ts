@@ -1,8 +1,9 @@
 import { Promotion } from '@/infra/models/promotion'
 import { AppDataSource } from '@/main/typeorm/config'
 
-export class CreatePromotionRepository {
+export class CreateUserRepository {
   async create (): Promise<string> {
+    console.log("dentro do repository do user")
     // const userRepository = AppDataSource.getRepository(Promotion)
     // let promotion = new Promotion()
 

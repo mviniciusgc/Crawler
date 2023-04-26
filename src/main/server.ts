@@ -1,3 +1,4 @@
+import "reflect-metadata"
 import 'module-alias/register'
 import app from '@/main/config/app'
 import { env } from '@/main/config/env'

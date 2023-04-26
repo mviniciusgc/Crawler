@@ -5,6 +5,11 @@
   "username": "postgres",
   "password": "123456",
   "database": "postgresdb",
-  "entities": ["./src/infra/models/*.ts"],
-  "migrations": ["./src/shared/infra/typeorm/migrations/*.{js,ts}"]
+  "synchronize": true ,
+  "entities": ["./src/infra/repositories/entities/*.{js,ts}"],
+  "migrations": ["./src/main/typeorm/migrations/*.{js,ts}"],
+  "cli": {
+    "migrationsDir": "./src/main/typeorm/migrations/",
+    "entities": "./src/infra/repositories/entities/"
+  }
 }

@@ -1,5 +1,5 @@
 import { adaptRoute } from '@/main/adapter'
-import { makePromotionCreateController } from '@/main/factories'
+import { makePromotionCreateController } from '@/main/injectDependence'
 
 import { Router } from 'express'
 

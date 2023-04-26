@@ -1,10 +1,10 @@
 
-import { CrawlerHandleRepository } from '@/data/contracts'
 import puppeteer, { Browser, Page } from 'puppeteer'
 import { SitesCrawler, tuplaEnumsBusines } from '@/infra/enum'
 
-export class CrawlerRepository implements CrawlerHandleRepository {
-  async handle (url: string): Promise<CrawlerHandleRepository.CrawlerModel> {
+export class CrawlerRepository {
+  async handle (url: string): Promise<string> {
+    console.log("dentro da infra crawler")
     const config = await createConfig()
     await crowler(url,config)
 

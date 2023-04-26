@@ -8,7 +8,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: '123456'
       POSTGRES_DB: postgresdb
-    volumes: [ './db.sql:/docker-entrypoint-initdb.d/db.sql' ]
+    # volumes: [ './db.sql:/docker-entrypoint-initdb.d/db.sql' ]
     restart: always
     ports:
       - 5432:5432 
