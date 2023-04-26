@@ -4,8 +4,6 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  OneToMany,
-  JoinColumn,
 } from 'typeorm';
 
 @Entity('user')
@@ -18,10 +16,6 @@ class User {
 
   @Column()
   nick_name: string
-
-  // @OneToMany(() => OrdersProducts, orderProduct => orderProduct.product)
-  // @JoinColumn()
-  // order_products: OrdersProducts[];
 
   @CreateDateColumn({ select: false })
   created_at: Date;

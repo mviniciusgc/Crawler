@@ -1,6 +1,7 @@
-import 'reflect-metadata'
+import "reflect-metadata"
 import { DataSource } from 'typeorm'
-import { Promotion } from '@/infra/models/promotion'
+import User from '../../entities/user'
+import {UserTable1682515358397} from './migrations/1682515358397-UserTable'
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -9,13 +10,10 @@ export const AppDataSource = new DataSource({
   username: 'postgres',
   password: '123456',
   database: 'postgresdb',
-  entities: [Promotion],
+  entities: [User],
+  migrations: [UserTable1682515358397],
+  subscribers:[],
   synchronize: false,
-  logging: true
+  logging: true,
 })
 
-AppDataSource.initialize()
-  .then(() => {
-    console.log('conectado')
-  })
-  .catch((error) => console.log(error))

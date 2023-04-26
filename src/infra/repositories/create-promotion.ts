@@ -1,5 +1,5 @@
 import { Promotion } from '@/infra/models/promotion'
-import { AppDataSource } from '@/main/typeorm/config'
+import { AppDataSource } from './database/typeorm/config'
 
 export class CreatePromotionRepository {
   async create (): Promise<string> {
