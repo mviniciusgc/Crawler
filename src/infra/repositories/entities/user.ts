@@ -17,6 +17,9 @@ class User {
   @Column()
   nick_name: string
 
+  @Column()
+  email: string
+
   @CreateDateColumn({ select: false })
   created_at: Date;
 

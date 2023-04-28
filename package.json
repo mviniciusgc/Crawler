@@ -6,13 +6,9 @@
   "scripts": {
     "test": "jest --passWithNoTests --runInBand --no-cache",
     "start": "node dist/main/server.js",
-    "start:dev": "ts-node-dev src/main/server.ts",
+    "start:dev": "ts-node-dev src/main/server.ts ",
     "build": "rimraf dist && tsc",
-    "typeorm3": "node --require ts-node/register ./node_modules/typeorm/cli.js",
-    "typeorm2": "typeorm-ts-node-commonjs",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "migrations:create": "typeorm migration:create ./src/infra/repositories/typeorm/migrations -- -n",
-    "migration:generate": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:generate -d src/infra/repositories/typeorm/config.ts"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "repository": {
     "type": "git",

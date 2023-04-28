@@ -1,1 +1,1 @@
-export * from './create-promotion'
+export * from './create'
