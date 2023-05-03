@@ -1,7 +1,7 @@
-export interface GetPromotionURL {
-  get: (params: GetPromotionURL.Params) => Promise<GetPromotionURL.Result>
+export interface IGetPromotionURL {
+  get: (params: IGetPromotionURL.Params) => Promise<IGetPromotionURL.Result>
 }
-export namespace GetPromotionURL {
+export namespace IGetPromotionURL {
   export type Params = {
     url: string
   }

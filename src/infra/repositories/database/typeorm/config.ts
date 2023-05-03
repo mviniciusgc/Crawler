@@ -1,7 +1,7 @@
 import "reflect-metadata"
 import { DataSource } from 'typeorm'
-import User from '../../entities/user'
-import {UserTable1682515358397} from './migrations/1682515358397-UserTable'
+import {User,Promotion} from '../../entities'
+import {UserTable1682515358397, CreatePromotionTable1682780793348} from './migrations'
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -10,8 +10,8 @@ export const AppDataSource = new DataSource({
   username: 'postgres',
   password: '123456',
   database: 'postgresdb',
-  entities: [User],
-  migrations: [UserTable1682515358397],
+  entities: [User,Promotion],
+  migrations: [UserTable1682515358397,CreatePromotionTable1682780793348],
   subscribers:[],
   synchronize: false,
   logging: true,

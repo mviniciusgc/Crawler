@@ -1,3 +1,4 @@
-export * from './promotion-create'
+export * from './create-promotion'
 export * from './get-promotion-create-url'
-export * from './user-create'
+export * from './create-user'
+export * from './get-user-by-id'

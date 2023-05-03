@@ -1,29 +1,26 @@
-import  User  from '../entities/user'
+import  { User }  from '../entities'
 import { AppDataSource } from '../database/typeorm/config'
-import {UserCreateRepository} from '@/infra/usecases'
+import {IUserCreateRepository} from '@/infra/usecases'
 
-export class CreateUserRepository implements UserCreateRepository {
-  async create (params: UserCreateRepository.Params): Promise<UserCreateRepository.Result> {
+export class CreateUserRepository implements IUserCreateRepository {
+  async create (params: IUserCreateRepository.Params): Promise<IUserCreateRepository.Result> {
+    
     const userRepository = AppDataSource.getRepository(User)
     const newUser = await this.adapterRequest(params, new User())
     const userResponse = await userRepository.manager.save(newUser)
  
-    console.log(userResponse)
+    delete userResponse.created_at
+    delete userResponse.updated_at
+
     return userResponse
   }
 
-  async adapterRequest ({name,nick_name,email}: UserCreateRepository.Params, newUser: User): Promise<User> {
+  async adapterRequest ({name,nick_name,email}: IUserCreateRepository.Params, newUser: User): Promise<User> {
     newUser.name = name
     newUser.nick_name = nick_name
     newUser.email = email
 
     return newUser
   }
-  async adapterResponse ({name,nick_name,email}: UserCreateRepository.Params, newUser: User): Promise<User> {
-    newUser.name = name
-    newUser.nick_name = nick_name
-    newUser.email = email
 
-    return newUser
-  }
 }

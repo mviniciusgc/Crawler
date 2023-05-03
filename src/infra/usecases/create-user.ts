@@ -1,7 +1,7 @@
-export interface UserCreateRepository {
-  create: (params: UserCreateRepository.Params) => Promise<UserCreateRepository.Result>
+export interface IUserCreateRepository {
+  create: (params: IUserCreateRepository.Params) => Promise<IUserCreateRepository.Result>
 }
-export namespace UserCreateRepository {
+export namespace IUserCreateRepository {
   export type Params = {
     name: string
     nick_name: string

@@ -1,12 +1,11 @@
 import { Controller, HttpResponse, serverError, ok } from '@/presentation/contracts'
 import { badRequest } from '@/presentation/help'
 import { MissingParamError } from '@/presentation/errors'
-import { CreateUserRepository} from '@/infra/repositories/user'
-import {UserCreateRepository} from '@/infra/usecases'
+import {IUserCreateRepository} from '@/infra/usecases'
 
 export class UserCreateController implements Controller {
   constructor (
-    private readonly createUserRepository: UserCreateRepository
+    private readonly createUserRepository: IUserCreateRepository
     ) {}
 
     async handle (request: UserCreateController.Request): Promise<HttpResponse> {
@@ -33,13 +32,3 @@ export namespace UserCreateController {
     email: string
   }
 }
-
-// const validate = (request: UserCreateController.Request): boolean => {
-
-
-//   for 
-
-
-//   return true
-
-// }

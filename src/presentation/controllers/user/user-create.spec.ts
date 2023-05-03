@@ -1,8 +1,7 @@
-import { UserCreateController } from './index'
+import { UserCreateController } from '@/presentation/controllers/index'
 import { UserCreateSpy } from '@/presentation/mocks'
 import { badRequest } from '@/presentation/help'
 import { MissingParamError } from '@/presentation/errors'
-import {UserCreate} from '@/infra/usecases'
 
 const mockRequest = (): UserCreateController.Request => {
   return {
