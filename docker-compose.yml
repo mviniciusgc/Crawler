@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: '123456'
-      POSTGRES_DB: postgresdb
+      POSTGRES_DB: crawler
     restart: always
     ports:
       - 5432:5432 

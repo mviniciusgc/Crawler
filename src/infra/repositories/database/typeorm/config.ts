@@ -1,7 +1,6 @@
 import "reflect-metadata"
 import { DataSource } from 'typeorm'
-import {User,Promotion} from '../../entities'
-import {UserTable1682515358397, CreatePromotionTable1682780793348} from './migrations'
+import path from "path"
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -9,9 +8,9 @@ export const AppDataSource = new DataSource({
   port: 5432,
   username: 'postgres',
   password: '123456',
-  database: 'postgresdb',
-  entities: [User,Promotion],
-  migrations: [UserTable1682515358397,CreatePromotionTable1682780793348],
+  database: 'crawler',
+  entities: [path.join(__dirname, '../../entities/{.js,*.ts}')],
+  migrations: [`${__dirname}/migrations/{.js,*.ts}`],
   subscribers:[],
   synchronize: false,
   logging: true,

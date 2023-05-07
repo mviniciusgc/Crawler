@@ -1,3 +1,5 @@
-export * from './promotion/promotion-create'
+export * from './promotion/create-promotion'
+export * from './promotion/get-promotion-by-id'
 export * from './user/user-create'
 export * from './user/get-user-by-id'
+export * from './message/message-create'

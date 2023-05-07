@@ -1,4 +1,4 @@
-import  { Promotion }  from '../entities'
+import  { Promotion }  from '../entities/promotion'
 import { AppDataSource } from '../database/typeorm/config'
 import {IPromotionCreateRepository} from '@/infra/usecases'
 

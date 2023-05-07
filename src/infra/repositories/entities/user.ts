@@ -4,7 +4,9 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany
 } from 'typeorm';
+import { Message } from './message'
 
 @Entity('user')
 export class User {
@@ -19,6 +21,9 @@ export class User {
 
   @Column()
   email: string
+
+  @OneToMany(() => Message, (message) => message.promotion)
+  message: Message[]
 
   @CreateDateColumn({ select: false })
   created_at: Date;

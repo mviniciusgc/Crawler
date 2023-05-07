@@ -3,13 +3,17 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   Entity,
-  PrimaryGeneratedColumn
+  PrimaryGeneratedColumn,
+  JoinColumn,
+  OneToMany
 } from 'typeorm'
+
+import { Message } from './message'
 
 @Entity('promotion')
 export class Promotion {
-  @PrimaryGeneratedColumn()
-    promotion_id!: number
+  @PrimaryGeneratedColumn('uuid')
+    promotion_id!: string
   
   @Column()
     title: string
@@ -25,6 +29,9 @@ export class Promotion {
   
   @Column()
     price: string
+  
+  @OneToMany(() => Message, (message) => message.promotion)
+  message: Message[]
 
   @CreateDateColumn({ name: 'created_at' })
     created_at: Date

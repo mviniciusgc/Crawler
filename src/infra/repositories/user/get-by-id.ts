@@ -1,4 +1,4 @@
-import  { User }  from '../entities'
+import  { User }  from '../entities/user'
 import { AppDataSource } from '../database/typeorm/config'
 import {IGetUserByIDRepository} from '@/infra/usecases'
 

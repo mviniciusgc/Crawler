@@ -4,12 +4,12 @@ import { Controller, HttpResponse, serverError, ok } from '@/presentation/contra
 import { badRequest } from '@/presentation/help'
 import { MissingParamError } from '@/presentation/errors'
 
-export class PromotionCreateController implements Controller {
+export class CreatePromotionController implements Controller {
   constructor (
     private readonly createPromotionRepository: IPromotionCreateRepository,
     ) {}
 
-  async handle (request: PromotionCreateController.Request): Promise<HttpResponse> {
+  async handle (request: CreatePromotionController.Request): Promise<HttpResponse> {
     try {
       for (const field in request){
         if (request[field] === '') {
@@ -28,7 +28,7 @@ export class PromotionCreateController implements Controller {
   }
 }
 
-export namespace PromotionCreateController {
+export namespace CreatePromotionController {
   export type Request = {
     url: string
     url_img: string

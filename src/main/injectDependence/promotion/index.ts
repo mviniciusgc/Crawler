@@ -1,1 +1,2 @@
-export * from './promotion-create-controller'
+export * from './get-promotion-controller'
+export * from './create-promotion-controller'
