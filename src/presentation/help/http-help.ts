@@ -5,6 +5,10 @@ export const badRequest = (error: Error): HttpResponse => ({
   statusCode: 400,
   body: error
 })
+export const conflictRequest = (error: Error): HttpResponse => ({
+  statusCode: 409,
+  body: error
+})
 
 export const forbidden = (error: Error): HttpResponse => ({
   statusCode: 403,

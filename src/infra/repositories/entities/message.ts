@@ -24,9 +24,9 @@ export class Message {
   @Column('text')
   description: string
   
-  @ManyToOne(() => User,(user) => user.message)
-  @JoinColumn({name: 'user_id'})
-  user?: User
+  // @ManyToOne(() => User,(user) => user.message)
+  // @JoinColumn({name: 'user_id'})
+  // user?: User
 
   @ManyToOne(() => Promotion,(promotion) => promotion.message)
   @JoinColumn({name: 'promotion_id'})

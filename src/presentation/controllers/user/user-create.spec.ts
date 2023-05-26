@@ -7,7 +7,8 @@ const mockRequest = (): UserCreateController.Request => {
   return {
     name: 'Name Valid',
     nick_name: "nick_name valid",
-    email: 'Email valid'
+    email: 'Email valid',
+    password: 'Password valid'
   }
 }
 export const throwError = (): never => {

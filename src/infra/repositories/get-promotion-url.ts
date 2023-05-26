@@ -1,4 +1,3 @@
-import { Promotion } from '@/infra/models/promotion'
 import { AppDataSource } from './database/typeorm/config'
 
 export class GetPromotionURL {

@@ -11,17 +11,19 @@ export class CreatePromotionController implements Controller {
 
   async handle (request: CreatePromotionController.Request): Promise<HttpResponse> {
     try {
+
+      console.log("bateu aqui")
       for (const field in request){
         if (request[field] === '') {
           return badRequest(new MissingParamError(field))
         }
       }
+
       const { url, description, url_img,price,title } = request
-      //const resp = await this.crawlerHandleRepository.handle(null)
-      //const promotion = await this.promotionCreate.create({ url })
       const promotion = await this.createPromotionRepository.create({url, description, url_img,price,title})
 
       return ok(promotion)
+      
     } catch (error) {
       return serverError(error)
     }

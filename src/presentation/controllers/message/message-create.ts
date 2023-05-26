@@ -11,6 +11,7 @@ export class MessageCreateController implements Controller {
 
   async handle (request: MessageCreateController.Request): Promise<HttpResponse> {
     try {
+      
       for (const field in request){
         if (request[field] === '') {
           return badRequest(new MissingParamError(field))

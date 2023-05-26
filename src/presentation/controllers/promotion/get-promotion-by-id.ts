@@ -21,6 +21,7 @@ export class GetPromotionByIDController implements Controller {
       const promotion = await this.createPromotionRepository.getById({promotion_id: id})
 
       return ok(promotion)
+      
     } catch (error) {
       return serverError(error)
     }

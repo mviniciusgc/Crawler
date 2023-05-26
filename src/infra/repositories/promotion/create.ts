@@ -5,7 +5,6 @@ import {IPromotionCreateRepository} from '@/infra/usecases'
 export class CreatePromotionRepository implements IPromotionCreateRepository {
   async create (params: IPromotionCreateRepository.Params): Promise<IPromotionCreateRepository.Result> {
 
-    console.log(params)
     const userRepository = AppDataSource.getRepository(Promotion)
     const newPromotion = await this.adapterRequest(params, new Promotion())
     const promotionResponse = await userRepository.manager.save(newPromotion)
